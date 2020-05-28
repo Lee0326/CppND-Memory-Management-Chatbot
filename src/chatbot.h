@@ -12,7 +12,7 @@ class ChatBot
 private:
     // data handles (owned)
     wxBitmap *_image; // avatar image
-
+    std::string _filename;
     // data handles (not owned)
     GraphNode *_currentNode;
     GraphNode *_rootNode;
@@ -29,7 +29,10 @@ public:
 
     //// STUDENT CODE
     ////
-
+    ChatBot(const ChatBot &source);            // copy constructor
+    ChatBot &operator=(const ChatBot &source); // copy assignment
+    ChatBot(ChatBot &&source);                 // move constructor
+    ChatBot &operator=(ChatBot &&source);      // move assignment
     ////
     //// EOF STUDENT CODE
 
